@@ -15,12 +15,23 @@ XEP-0141: xmlns:xdl:='http://jabber.org/protocol/xdata-layout'
 This XEP: xmlns:xdd:='http://jabber.org/protocol/xdata-dynamic'
 
 validate command. (If session not available, ignore)
-cancel form command (if not setting propertly)
+
+<xdd:postBack>
+	data form
+</xdd:postBack>
+
+<xdd:postBackResponse result='OK'>
+	new data form
+</xdd:postBackResponse>
+
+<xdd:cancel>
+	data form	(sufficient with hidden parameters)
+</cdd:cancel>
 
 * <xdd:readOnly/>
-* <xdd:notSame/>	If set, <required/> must not be present.
-* <xdd:error>error message</xdd:error>
-* <xdd:postBack/>
+* <xdd:notSame/>	If set, <required/> must not be present. If edited, flag removed.
+* <xdd:error>error message</xdd:error>	If edited, flag remoed until re-validated.
+* <xdd:postBack/>	Inga som fortfarande är notSame skickas med i postback. Fält som editeras och skickas med i postBack, får inte ha notSame i svaret.
 
 * Tabs = <xdl:page>
 
