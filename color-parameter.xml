@@ -17,8 +17,8 @@
                 This XMPP Extension Protocol has been contributed in full conformance with the XSF's Intellectual Property Rights Policy (a copy of which may be found at &lt;<link url='http://www.xmpp.org/extensions/ipr-policy.shtml'>http://www.xmpp.org/extensions/ipr-policy.shtml</link>&gt; or obtained by writing to XSF, P.O. Box 1641, Denver, CO 80201 USA).
             </conformance>
         </legal>
-        <number>xxxx</number>
-        <status>ProtoXEP</status>
+        <number>0331</number>
+        <status>Experimental</status>
         <type>Standards Track</type>
         <sig>Standards</sig>
         <approver>Council</approver>
@@ -37,8 +37,16 @@
             <surname>Waher</surname>
             <email>peter.waher@clayster.com</email>
             <jid>peter.waher@jabber.org</jid>
-            <uri>http://se.linkedin.com/pub/peter-waher/1a/71b/a29/</uri>
+            <uri>http://www.linkedin.com/in/peterwaher</uri>
         </author>
+		<revision>
+			<version>0.1</version>
+			<date>2013-06-26</date>
+			<initials>psa</initials>
+			<remark>
+				<p>Initial published version approved by the XMPP Council.</p>
+			</remark>
+		</revision>
 		<revision>
 			<version>0.0.2</version>
 			<date>2013-06-11</date>
@@ -160,7 +168,7 @@
     <datatype-prefix>
         <prefix>xdc</prefix>
         <desc>defines the Color data type</desc>
-        <doc>color-parameter.html</doc>
+        <doc>http://xmpp.org/extensions/xep-0331.html</doc>
     </datatype-prefix>]]>
 			</code>
 		</section2>
