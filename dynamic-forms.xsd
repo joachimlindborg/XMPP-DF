@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema
+    xmlns:xs='http://www.w3.org/2001/XMLSchema'
+    targetNamespace='http://jabber.org/protocol/xdata-dynamic'
+    xmlns='http://jabber.org/protocol/xdata-dynamic'
+    xmlns:xd="jabber:x:data"
+    elementFormDefault='qualified'>
+
+	<xs:import namespace='jabber:x:data'/>
+
+	<xs:element name='postBack'>
+		<xs:annotation>
+			<xs:documentation>Flags a field as requiring server post-back after having been edited.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType/>
+	</xs:element>
+
+	<xs:element name='readOnly'>
+		<xs:annotation>
+			<xs:documentation>Flags a field as being read-only.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType/>
+	</xs:element>
+
+	<xs:element name='notSame'>
+		<xs:annotation>
+			<xs:documentation>Flags a field as having an undefined or uncertain value.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType/>
+	</xs:element>
+
+	<xs:element name='error'>
+		<xs:annotation>
+			<xs:documentation>Flags a field as having an error.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base='xs:string'/>
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name='formPostBack'>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref='xd:x' minOccurs='1' maxOccurs='1'/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name='formPostBackResponse'>
+		<xs:complexType>
+			<xs:choice>
+				<xs:element ref='xd:x' minOccurs='0' maxOccurs='1'/>
+				<xs:element name='error' type='xs:string' minOccurs='0' maxOccurs='1'/>
+			</xs:choice>
+			<xs:attribute name='result' type='PostBackResultCode' use='required'/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name='formUpdated'>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref='xd:x' minOccurs='1' maxOccurs='1'/>
+			</xs:sequence>
+			<xs:attribute name='sessionVariable' type='xs:string' use='required'/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:simpleType name='PostBackResultCode'>
+		<xs:restriction base='xs:string'>
+			<xs:enumeration value='OK'/>
+			<xs:enumeration value='NotFound'/>
+			<xs:enumeration value='OtherError'/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:element name='cancel'>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref='xd:x' minOccurs='1' maxOccurs='1'/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name='cancelResponse'>
+		<xs:complexType>
+			<xs:attribute name='result' type='PostBackResultCode' use='required'/>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>
