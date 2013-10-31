@@ -703,7 +703,7 @@
     ...
     <message from='server@clayster.com'
              to='client@clayster.com/client'>
-        <formUpdated xmlns='http://jabber.org/protocol/xdata-dynamic' sessionVariable='xdd session'>
+        <formUpdated xmlns='http://jabber.org/protocol/xdata-dynamic' sessionVariable='xdd session' xml:lang='en'>
             <x xmlns="jabber:x:data" type="form"
                xmlns:xdd="http://jabber.org/protocol/xdata-dynamic" 
                xmlns:xdv="http://jabber.org/protocol/xdata-validate">
@@ -725,6 +725,10 @@
 			<p>
 				<strong>Note:</strong> Make sure to check the implementation note <link url='#clientsidevalues'>Merging Client-Side Values</link> for information
 				on how to merge updates received from the server with current input made by the client.
+			</p>
+			<p>
+				<strong>Note 2:</strong> The client should also provide the current user language in a <strong>xml:lang</strong> attribute in the <strong>formUpdated</strong>
+				element, if available, as is shown in the example above. 
 			</p>
 		</section2>
     </section1>
